@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{Component} from 'react';
 
 function ListContacts(props){
     return (
             <ol className='contact-list'>
-                {props.contacts.map((contact)=>(
+                {props.contacts.map((contact) => (
                         <li key={contact.id} className='contact-list-item'>
                             <div className='contact-avatar' style={{
                                 backgroundImage:`url(${contact.avatarURL})`
@@ -12,7 +12,8 @@ function ListContacts(props){
                                 <p>{contact.name}</p>
                                 <p>{contact.email}</p>
                             </div>
-                            <button className='contact-remove'>
+                            <button onClick={() => props.onDeleteContact(contact)}
+                            className='contact-remove'>
                                 Remove
                             </button>
                         </li>
