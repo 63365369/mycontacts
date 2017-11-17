@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 //import './App.css';
 import ListContacts from './ListContacts.js';
- const contacts = [
+
+class App extends Component {
+    state = {
+      contacts : [
    {
      "id": "ryan",
      "name": "Ryan Florence",
@@ -22,12 +25,11 @@ import ListContacts from './ListContacts.js';
      "avatarURL": "http://localhost:5001/tyler.jpg"
    }
  ]
-
-class App extends Component {
+    }
     render() {
     return (
        <div>
-        <ListContacts contacts={contacts}/>
+        <ListContacts contacts={this.state.contacts}/>
        </div>
      )
     }
